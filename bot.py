@@ -6,4 +6,4 @@ load_dotenv()
 
 bot = Bot()
 
-bot.run(os.environ['WARP_TOKEN'])
+bot.run(environ['WARP_TOKEN'])
