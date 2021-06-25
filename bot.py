@@ -1,11 +1,11 @@
-from discord.ext.commands import Bot
+from discord.ext.commands import Bot, when_mentioned_or
 from dotenv import load_dotenv
 from os import environ
 from discord_slash import SlashCommand
 
 load_dotenv()
 
-bot = Bot()
+bot = Bot(command_prefix=when_mentioned_or('warp.'))
 slash = SlashCommand(bot, sync_commands=True)
 
 bot.run(environ['WARP_TOKEN'])
