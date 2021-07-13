@@ -15,3 +15,6 @@ class Fun(commands.Cog):
     @cog_ext.cog_slash(name="bonk")
     def bonk_slash(self, ctx):
         self.bonk(ctx)
+
+def setup(bot):
+    bot.add_cog(Fun(bot))
