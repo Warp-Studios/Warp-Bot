@@ -5,16 +5,16 @@ class Fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    def bonk(self, ctx):
-        ctx.send("bonk")     
+    async def bonk(self, ctx):
+        await ctx.send("bonk")     
     
     @commands.command(name='bonk')
-    def bonk_normal(self, ctx):
-        self.bonk(ctx)
+    async def bonk_normal(self, ctx):
+        await self.bonk(ctx)
     
     @cog_ext.cog_slash(name="bonk")
-    def bonk_slash(self, ctx):
-        self.bonk(ctx)
+    async def bonk_slash(self, ctx):
+        await self.bonk(ctx)
 
 def setup(bot):
     bot.add_cog(Fun(bot))
